@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import React, { useState, useRef } from "react";
-import { Flex, Text, Button, Heading } from "@radix-ui/themes";
+import { useState } from "react";
+import { Button } from "@radix-ui/themes";
 
 const CityPost = styled.form`
   width: 400px;

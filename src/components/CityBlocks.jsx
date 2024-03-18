@@ -1,27 +1,11 @@
 import styled from "styled-components";
-import { useState } from "react";
-import { Flex, Text, Button, Heading } from "@radix-ui/themes";
-import { color } from "framer-motion";
-
-// const [addCity, setAddCity] = useState("");
-// const [deleteCity, setDeleteCity] = useState("");
+import { Button } from "@radix-ui/themes";
 
 const CityBlock = styled.div`
   width: 400px;
-  ${"" /* background-color: #e1bee7; */}
   display: flex;
   justify-content: space-between;
 `;
-
-// const InputDeleteButton = styled.button`
-//   width: 200px;
-//   height: 40px;
-//   background-color: #ffcdd2;
-//   margin-bottom: 20px;
-//   font-size: 16px;
-//   font-family: Ubuntu;
-//   font-weight: 500;
-// `;
 
 const CityName = styled.div`
   align-self: center;
@@ -29,12 +13,6 @@ const CityName = styled.div`
 `;
 
 function CityBlocks({ cities, deleteCity, sharedAPI }) {
-  // const [search, setSearch] = useState("");
-
-  // sharedAPI.then((result) => {
-  //   console.log(result);
-  // });
-
   return (
     <>
       {cities.map((city, index) => (
