@@ -49,7 +49,7 @@ function Header({ toggleTheme, isDarkTheme }) {
             >
               <img
                 style={{ width: "56px", height: "56px" }}
-                src="./src/assets/Logo.svg"
+                src="./src/assets/logo.svg"
               />
             </div>
           </Link>
