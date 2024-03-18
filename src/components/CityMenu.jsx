@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React, { useState, useRef } from "react";
+import { Flex, Text, Button, Heading } from "@radix-ui/themes";
 
 const CityPost = styled.form`
   width: 400px;
@@ -14,14 +15,14 @@ const CityInput = styled.input`
   cursor: pointer;
 `;
 
-const InputButton = styled.button`
-  width: 200px;
-  height: 40px;
-  background-color: #80deea;
-  font-size: 16px;
-  font-family: Ubuntu;
-  font-weight: 500;
-`;
+// const InputButton = styled.button`
+//   width: 200px;
+//   height: 40px;
+//   background-color: #80deea;
+//   font-size: 16px;
+//   font-family: Ubuntu;
+//   font-weight: 500;
+// `;
 
 // const ErrorText = styled.text`
 //   width: 200px;
@@ -96,7 +97,7 @@ function CityMenu({ addCity, setSharedAPI }) {
         type="text"
         placeholder="Enter city"
       ></CityInput>
-      <InputButton onClick={addNewCity}>Add</InputButton>
+      <Button onClick={addNewCity}>Add</Button>
     </CityPost>
   );
 }

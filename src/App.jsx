@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import Header from "./components/Header";
-// import Body from "./components/Body";
 import Footer from "./components/Footer";
-import AboutUs from "./components/AboutUs";
+import AboutTheGame from "./components/AboutTheGame";
 import PlayGame from "./components/PlayGame";
-import AddCityBlock from "./components/AddCityBlock";
-import ContactUs from "./components/ContactUs";
+import Settings from "./components/Settings";
+import ContactMe from "./components/ContactMe";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Theme } from "@radix-ui/themes";
+import { useState, useEffect } from "react";
 
 const MainDiv = styled.div`
   margin: 0;
@@ -16,26 +17,44 @@ const MainDiv = styled.div`
 
 const Wrapper = styled.div`
   max-width: 1280px;
+  height: 100vh;
   margin: auto;
-  background-color: #d7ccc8;
+  ${"" /* background-color: #d7ccc8; */}
   font-family: Ubuntu, sans-serif;
-  padding: 3%;
+  padding: 0 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 function App() {
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  useEffect(() => {
+    document.body.className = isDarkTheme ? "dark" : "light";
+  }, [isDarkTheme]);
+
+  const toggleTheme = () => {
+    setIsDarkTheme(!isDarkTheme);
+  };
   return (
     <Router>
       <MainDiv>
         <Wrapper>
-          <Header />
-          <Routes>
-            <Route path="/about-us" element={<AboutUs />} />
-            <Route path="/play-game" element={<PlayGame />} />
-            <Route path="/add-city-block" element={<AddCityBlock />} />
-            <Route path="/contact-us" element={<ContactUs />} />
-          </Routes>
-          {/* <Body /> */}
-          <Footer />
+          <Theme
+            appearance={isDarkTheme ? "dark" : "light"}
+            accentColor="indigo"
+            style={{ flexGrow: "1" }}
+          >
+            <Header toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+            <Routes>
+              <Route path="/" element={<AboutTheGame />} />
+              <Route path="/about-the-game" element={<AboutTheGame />} />
+              <Route path="/play-the-game" element={<PlayGame />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/contact-me" element={<ContactMe />} />
+            </Routes>
+            <Footer />
+          </Theme>
         </Wrapper>
       </MainDiv>
     </Router>

@@ -1,25 +1,27 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { Flex, Text, Button, Heading } from "@radix-ui/themes";
+import { color } from "framer-motion";
 
 // const [addCity, setAddCity] = useState("");
 // const [deleteCity, setDeleteCity] = useState("");
 
 const CityBlock = styled.div`
   width: 400px;
-  background-color: #e1bee7;
+  ${"" /* background-color: #e1bee7; */}
   display: flex;
   justify-content: space-between;
 `;
 
-const InputDeleteButton = styled.button`
-  width: 200px;
-  height: 40px;
-  background-color: #ffcdd2;
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-family: Ubuntu;
-  font-weight: 500;
-`;
+// const InputDeleteButton = styled.button`
+//   width: 200px;
+//   height: 40px;
+//   background-color: #ffcdd2;
+//   margin-bottom: 20px;
+//   font-size: 16px;
+//   font-family: Ubuntu;
+//   font-weight: 500;
+// `;
 
 const CityName = styled.div`
   align-self: center;
@@ -44,9 +46,9 @@ function CityBlocks({ cities, deleteCity, sharedAPI }) {
               ? `Temp: ${sharedAPI.main.temp}°C`
               : ""} */}
           </CityName>
-          <InputDeleteButton onClick={() => deleteCity(city.id)}>
+          <Button onClick={() => deleteCity(city.id)} color="ruby">
             Remove
-          </InputDeleteButton>
+          </Button>
         </CityBlock>
       ))}
     </>

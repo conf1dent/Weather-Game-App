@@ -1,18 +1,6 @@
-import styled from "styled-components";
-import React, { useState } from "react";
-
-const SubmitBtn = styled.button`
-  width: 200px;
-  height: 40px;
-  background-color: teal;
-  color: white;
-  margin-bottom: 20px;
-  font-size: 16px;
-  font-family: Ubuntu;
-  font-weight: 500;
-`;
-
-// const [cityDatabase, setCityDatabase] = useState([{ id: 0, city: "" }]);
+// import styled from "styled-components";
+import { useState } from "react";
+import { Button } from "@radix-ui/themes";
 
 function SubmitCities({ cities }) {
   const [isNotEmptyObj, setIsNotEmptyObj] = useState(true);
@@ -42,7 +30,15 @@ function SubmitCities({ cities }) {
     // a.click(); //automatically downloads json file
   }
 
-  return <SubmitBtn onClick={SubmitHandler}>Submit</SubmitBtn>;
+  return (
+    <Button
+      onClick={SubmitHandler}
+      size="4"
+      style={{ backgroundColor: "#00E5FF", color: "#006064" }}
+    >
+      <strong>Submit</strong>
+    </Button>
+  );
 }
 
 export default SubmitCities;
