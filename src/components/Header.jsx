@@ -50,7 +50,8 @@ function Header({ toggleTheme, isDarkTheme }) {
               <img
                 style={{ width: "56px", height: "56px" }}
                 // src="./src/assets/logo.svg"
-                src="./public/logo.svg"
+                // src="./public/logo.svg"
+                src="https://raw.githubusercontent.com/conf1dent/Weather-Game-App/3828fa32d2123292c120a727007ea8ded8e3e39c/public/logo.svg"
               />
             </div>
           </Link>
